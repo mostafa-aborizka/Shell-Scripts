@@ -14,7 +14,7 @@ fi
 echo 'Count,IP,Location'
 
 #Loop through failed attempts
-grep Failed syslog-sample | awk '{print $(NF - 3)}' | sort | uniq -c | while read COUNT IP
+grep Failed LOG_FILE | awk '{print $(NF - 3)}' | sort | uniq -c | while read COUNT IP
 do 
  if [[ "${COUNT}" -gt 10 ]] 
  then 
